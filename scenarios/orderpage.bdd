@@ -1,0 +1,38 @@
+
+
+SCENARIO: create new order , validate and view the Records
+META-DATA: {"Tc_Id":001,"description":"user create new order and validate and view the Records","groups":["ws","web"],"key":"order"}
+	
+	Given User create new order for ${clientName} with amount ${amount}
+	Then response should have status 'CREATED'
+	And Order should be created with id say 'new.order.id'
+	And Validate order details with id as '${new.order.id}', name as ${clientName} and amount as ${amount}
+	
+END
+
+SCENARIO: update Existing Order
+META-DATA: {"Tc_Id":002,"description":"user update  existing order";"groups": ["ws","web"]}
+	
+	Given Order exist with id '${new.order.id}'
+	When Order Entry for '${new.order.id}' should be updated with amount '${updatedata.amount}' on Orders Page
+	Then response should have status 'OK'
+	And Verify Order Entry for '${new.order.id}' should be updated with amount '${updatedata.amount}' on Orders Page
+	
+END
+
+
+SCENARIO: Delete the Order created
+META-DATA: {"Tc_Id":003,"description": "user delete created order";"groups": ["ws","web"]}
+			
+	
+	Given Order exist with id '${new.order.id}'
+	When User deletes order with id '${new.order.id}'
+	Then response should have status 'OK'
+	And Validate order details with id as '${new.order.id}', name as ${clientName} and amount as ${amount} not present
+    
+END
+
+
+
+
+

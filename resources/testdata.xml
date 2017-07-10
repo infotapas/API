@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<order>
+		<clientName>Subhendu1</clientName>
+		<amount>101</amount>
+		<clientName>Subhendu2</clientName>
+		<amount>102</amount>
+		<clientName>Subhendu3</clientName>
+		<amount>103</amount>
+		<clientName>Subhendu4</clientName>
+		<amount>104</amount>
+		<clientName>Subhendu5</clientName>
+		<amount>105</amount>
+	</order>
+	<updatedata>
+		<amount>8888</amount>
+	</updatedata>
+</root>
